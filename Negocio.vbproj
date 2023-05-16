@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{06DB80FC-98B7-44F5-BEC0-AAF2ECE2D2F8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Negocio.My.MyApplication</StartupObject>
+    <RootNamespace>Negocio</RootNamespace>
+    <AssemblyName>Negocio</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Negocio.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Negocio.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FrmABMCiudad.Designer.vb">
+      <DependentUpon>FrmABMCiudad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmABMCiudad.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmABMCondicionIVA.Designer.vb">
+      <DependentUpon>FrmABMCondicionIVA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmABMCondicionIVA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmABMEstado.Designer.vb">
+      <DependentUpon>FrmABMEstado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmABMEstado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmABMProducto.Designer.vb">
+      <DependentUpon>FrmABMProducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmABMProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmABMProveedor.Designer.vb">
+      <DependentUpon>FrmABMProveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmABMProveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmABMRubro.Designer.vb">
+      <DependentUpon>FrmABMRubro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmABMRubro.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCiudad.Designer.vb">
+      <DependentUpon>FrmCiudad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCiudad.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCondicionIVA.Designer.vb">
+      <DependentUpon>FrmCondicionIVA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCondicionIVA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEstado.Designer.vb">
+      <DependentUpon>FrmEstado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEstado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrincipal.Designer.vb">
+      <DependentUpon>frmPrincipal.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProducto.Designer.vb">
+      <DependentUpon>FrmProducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProveedor.Designer.vb">
+      <DependentUpon>FrmProveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRubro.Designer.vb">
+      <DependentUpon>FrmRubro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRubro.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulo.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FrmABMCiudad.resx">
+      <DependentUpon>FrmABMCiudad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmABMCondicionIVA.resx">
+      <DependentUpon>FrmABMCondicionIVA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmABMEstado.resx">
+      <DependentUpon>FrmABMEstado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmABMProducto.resx">
+      <DependentUpon>FrmABMProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmABMProveedor.resx">
+      <DependentUpon>FrmABMProveedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmABMRubro.resx">
+      <DependentUpon>FrmABMRubro.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCiudad.resx">
+      <DependentUpon>FrmCiudad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCondicionIVA.resx">
+      <DependentUpon>FrmCondicionIVA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEstado.resx">
+      <DependentUpon>FrmEstado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProducto.resx">
+      <DependentUpon>FrmProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProveedor.resx">
+      <DependentUpon>FrmProveedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRubro.resx">
+      <DependentUpon>FrmRubro.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\res.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimazar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maxi1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile-Menu-Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\producto2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\compras.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logout_37127.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit-svgrepo-com.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-circle-svgrepo-com.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_person_people_6100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1904675-configuration-edit-gear-options-preferences-setting-settings_122525.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\businesspackage_additionalpackage_box_add_insert_negoci_2335 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\documentediting_editdocuments_text_documentedi_2820.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder-trash-4341321_120557.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exit-Page_icon-icons.com_53732.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\find_search_document_6167.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aceptar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancelar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageup_imagen_12892.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
