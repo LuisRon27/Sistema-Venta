@@ -201,4 +201,8 @@ Public Class FrmABMProducto
     Private Sub PanelCabecera_Paint(sender As Object, e As PaintEventArgs) Handles PanelCabecera.Paint
 
     End Sub
+
+    Private Sub txtPrecioVenta_TextChanged(sender As Object, e As EventArgs) Handles txtPrecioVenta.TextChanged
+
+    End Sub
 End Class

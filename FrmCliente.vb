@@ -267,4 +267,15 @@
         End If
 
     End Sub
+
+    Private Sub GrillaCliente_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles GrillaCliente.CellDoubleClick
+        If lblSeñalBusqueda.Text = "BUSCAR" Then
+            FrmVenta.txtidCliente.Text = GrillaCliente.CurrentRow.Cells(0).Value
+            FrmVenta.txtNombre.Text = GrillaCliente.CurrentRow.Cells(1).Value
+            FrmVenta.txtApellido.Text = GrillaCliente.CurrentRow.Cells(2).Value
+
+            Close()
+
+        End If
+    End Sub
 End Class

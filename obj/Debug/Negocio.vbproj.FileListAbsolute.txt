@@ -24,3 +24,5 @@ C:\Users\luisr\source\repos\Negocio\obj\Debug\Negocio.FrmCondicionIVA.resources
 C:\Users\luisr\source\repos\Negocio\obj\Debug\Negocio.FrmABMCondicionIVA.resources
 C:\Users\luisr\source\repos\Negocio\obj\Debug\Negocio.FrmCliente.resources
 C:\Users\luisr\source\repos\Negocio\obj\Debug\Negocio.FrmABMCliente.resources
+C:\Users\luisr\source\repos\Negocio\obj\Debug\Negocio.FrmVenta.resources
+C:\Users\luisr\source\repos\Negocio\obj\Debug\Negocio.FrmMuestraProducto.resources

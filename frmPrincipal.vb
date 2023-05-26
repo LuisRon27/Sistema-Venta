@@ -152,4 +152,14 @@ Public Class frmPrincipal
         FrmCliente.Show()
 
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        FrmVenta.Show()
+
+    End Sub
+
+    Private Sub MuestraProductoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MuestraProductoToolStripMenuItem.Click
+        FrmMuestraProducto.Show()
+
+    End Sub
 End Class
