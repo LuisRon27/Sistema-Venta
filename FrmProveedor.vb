@@ -265,4 +265,8 @@
         txtbusqueda.Clear()
 
     End Sub
+
+    Private Sub PanelCabecera_Paint(sender As Object, e As PaintEventArgs) Handles PanelCabecera.Paint
+
+    End Sub
 End Class

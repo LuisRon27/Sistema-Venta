@@ -147,4 +147,9 @@ Public Class frmPrincipal
     Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
 
     End Sub
+
+    Private Sub btnClientes_Click(sender As Object, e As EventArgs) Handles btnClientes.Click
+        FrmCliente.Show()
+
+    End Sub
 End Class

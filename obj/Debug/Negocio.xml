@@ -47,6 +47,11 @@ Negocio
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Negocio.My.Resources.Resources.clientes">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Negocio.My.Resources.Resources.compras">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
@@ -118,6 +123,11 @@ Negocio
 </summary>
 </member>
 <member name="P:Negocio.My.Resources.Resources.user_person_people_6100">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Negocio.My.Resources.Resources.venta">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>

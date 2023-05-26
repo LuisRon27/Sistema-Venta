@@ -62,6 +62,10 @@ Partial Class FrmABMProducto
         Me.txtIdProveedor = New System.Windows.Forms.TextBox()
         Me.txtIdRubro = New System.Windows.Forms.TextBox()
         Me.txtIdEstado = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtCantidad = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtPrecioVenta = New System.Windows.Forms.TextBox()
         Me.PanelCabecera.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.btnMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -303,7 +307,7 @@ Partial Class FrmABMProducto
         Me.txtRubro.BackColor = System.Drawing.Color.Azure
         Me.txtRubro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtRubro.Font = New System.Drawing.Font("Century Gothic", 11.25!)
-        Me.txtRubro.Location = New System.Drawing.Point(70, 478)
+        Me.txtRubro.Location = New System.Drawing.Point(70, 552)
         Me.txtRubro.Name = "txtRubro"
         Me.txtRubro.Size = New System.Drawing.Size(267, 26)
         Me.txtRubro.TabIndex = 72
@@ -313,7 +317,7 @@ Partial Class FrmABMProducto
         Me.lblRubro.AutoSize = True
         Me.lblRubro.Font = New System.Drawing.Font("Century Gothic", 11.25!)
         Me.lblRubro.ForeColor = System.Drawing.Color.Black
-        Me.lblRubro.Location = New System.Drawing.Point(66, 455)
+        Me.lblRubro.Location = New System.Drawing.Point(66, 529)
         Me.lblRubro.Name = "lblRubro"
         Me.lblRubro.Size = New System.Drawing.Size(52, 20)
         Me.lblRubro.TabIndex = 71
@@ -324,7 +328,7 @@ Partial Class FrmABMProducto
         Me.txtEstado.BackColor = System.Drawing.Color.Azure
         Me.txtEstado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtEstado.Font = New System.Drawing.Font("Century Gothic", 11.25!)
-        Me.txtEstado.Location = New System.Drawing.Point(483, 478)
+        Me.txtEstado.Location = New System.Drawing.Point(483, 552)
         Me.txtEstado.Name = "txtEstado"
         Me.txtEstado.Size = New System.Drawing.Size(267, 26)
         Me.txtEstado.TabIndex = 75
@@ -334,7 +338,7 @@ Partial Class FrmABMProducto
         Me.lblestado.AutoSize = True
         Me.lblestado.Font = New System.Drawing.Font("Century Gothic", 11.25!)
         Me.lblestado.ForeColor = System.Drawing.Color.Black
-        Me.lblestado.Location = New System.Drawing.Point(479, 455)
+        Me.lblestado.Location = New System.Drawing.Point(479, 529)
         Me.lblestado.Name = "lblestado"
         Me.lblestado.Size = New System.Drawing.Size(58, 20)
         Me.lblestado.TabIndex = 74
@@ -345,7 +349,7 @@ Partial Class FrmABMProducto
         Me.dtFechaCarga.CalendarMonthBackground = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(94, Byte), Integer), CType(CType(129, Byte), Integer))
         Me.dtFechaCarga.Font = New System.Drawing.Font("Century Gothic", 11.25!)
         Me.dtFechaCarga.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtFechaCarga.Location = New System.Drawing.Point(70, 574)
+        Me.dtFechaCarga.Location = New System.Drawing.Point(70, 648)
         Me.dtFechaCarga.Name = "dtFechaCarga"
         Me.dtFechaCarga.Size = New System.Drawing.Size(267, 26)
         Me.dtFechaCarga.TabIndex = 77
@@ -355,7 +359,7 @@ Partial Class FrmABMProducto
         Me.lblFechaCarga.AutoSize = True
         Me.lblFechaCarga.Font = New System.Drawing.Font("Century Gothic", 11.25!)
         Me.lblFechaCarga.ForeColor = System.Drawing.Color.Black
-        Me.lblFechaCarga.Location = New System.Drawing.Point(66, 545)
+        Me.lblFechaCarga.Location = New System.Drawing.Point(66, 619)
         Me.lblFechaCarga.Name = "lblFechaCarga"
         Me.lblFechaCarga.Size = New System.Drawing.Size(106, 20)
         Me.lblFechaCarga.TabIndex = 78
@@ -366,7 +370,7 @@ Partial Class FrmABMProducto
         Me.lblFechaActualizacion.AutoSize = True
         Me.lblFechaActualizacion.Font = New System.Drawing.Font("Century Gothic", 11.25!)
         Me.lblFechaActualizacion.ForeColor = System.Drawing.Color.Black
-        Me.lblFechaActualizacion.Location = New System.Drawing.Point(479, 545)
+        Me.lblFechaActualizacion.Location = New System.Drawing.Point(479, 619)
         Me.lblFechaActualizacion.Name = "lblFechaActualizacion"
         Me.lblFechaActualizacion.Size = New System.Drawing.Size(158, 20)
         Me.lblFechaActualizacion.TabIndex = 80
@@ -377,7 +381,7 @@ Partial Class FrmABMProducto
         Me.dtFechaActualizacion.CalendarMonthBackground = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(94, Byte), Integer), CType(CType(129, Byte), Integer))
         Me.dtFechaActualizacion.Font = New System.Drawing.Font("Century Gothic", 11.25!)
         Me.dtFechaActualizacion.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtFechaActualizacion.Location = New System.Drawing.Point(483, 574)
+        Me.dtFechaActualizacion.Location = New System.Drawing.Point(483, 648)
         Me.dtFechaActualizacion.Name = "dtFechaActualizacion"
         Me.dtFechaActualizacion.Size = New System.Drawing.Size(267, 26)
         Me.dtFechaActualizacion.TabIndex = 79
@@ -409,7 +413,7 @@ Partial Class FrmABMProducto
         Me.txtImagen.BackColor = System.Drawing.Color.Azure
         Me.txtImagen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtImagen.Font = New System.Drawing.Font("Century Gothic", 11.25!)
-        Me.txtImagen.Location = New System.Drawing.Point(269, 660)
+        Me.txtImagen.Location = New System.Drawing.Point(269, 734)
         Me.txtImagen.Name = "txtImagen"
         Me.txtImagen.Size = New System.Drawing.Size(267, 26)
         Me.txtImagen.TabIndex = 84
@@ -419,7 +423,7 @@ Partial Class FrmABMProducto
         Me.lblImagen.AutoSize = True
         Me.lblImagen.Font = New System.Drawing.Font("Century Gothic", 11.25!)
         Me.lblImagen.ForeColor = System.Drawing.Color.Black
-        Me.lblImagen.Location = New System.Drawing.Point(265, 637)
+        Me.lblImagen.Location = New System.Drawing.Point(265, 711)
         Me.lblImagen.Name = "lblImagen"
         Me.lblImagen.Size = New System.Drawing.Size(66, 20)
         Me.lblImagen.TabIndex = 83
@@ -429,7 +433,7 @@ Partial Class FrmABMProducto
         '
         Me.btnBuscarImagen.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnBuscarImagen.Image = Global.Negocio.My.Resources.Resources.imageup_imagen_12892
-        Me.btnBuscarImagen.Location = New System.Drawing.Point(542, 655)
+        Me.btnBuscarImagen.Location = New System.Drawing.Point(542, 729)
         Me.btnBuscarImagen.Name = "btnBuscarImagen"
         Me.btnBuscarImagen.Size = New System.Drawing.Size(32, 32)
         Me.btnBuscarImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -440,7 +444,7 @@ Partial Class FrmABMProducto
         '
         Me.btnBuscarEstado.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnBuscarEstado.Image = Global.Negocio.My.Resources.Resources.find_search_document_6167
-        Me.btnBuscarEstado.Location = New System.Drawing.Point(757, 472)
+        Me.btnBuscarEstado.Location = New System.Drawing.Point(757, 546)
         Me.btnBuscarEstado.Name = "btnBuscarEstado"
         Me.btnBuscarEstado.Size = New System.Drawing.Size(32, 32)
         Me.btnBuscarEstado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -451,7 +455,7 @@ Partial Class FrmABMProducto
         '
         Me.btnBuscarRubro.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnBuscarRubro.Image = Global.Negocio.My.Resources.Resources.find_search_document_6167
-        Me.btnBuscarRubro.Location = New System.Drawing.Point(344, 472)
+        Me.btnBuscarRubro.Location = New System.Drawing.Point(344, 546)
         Me.btnBuscarRubro.Name = "btnBuscarRubro"
         Me.btnBuscarRubro.Size = New System.Drawing.Size(32, 32)
         Me.btnBuscarRubro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -485,7 +489,7 @@ Partial Class FrmABMProducto
         Me.txtIdRubro.BackColor = System.Drawing.Color.Azure
         Me.txtIdRubro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtIdRubro.Font = New System.Drawing.Font("Century Gothic", 11.25!)
-        Me.txtIdRubro.Location = New System.Drawing.Point(382, 478)
+        Me.txtIdRubro.Location = New System.Drawing.Point(382, 552)
         Me.txtIdRubro.Name = "txtIdRubro"
         Me.txtIdRubro.Size = New System.Drawing.Size(66, 26)
         Me.txtIdRubro.TabIndex = 87
@@ -496,18 +500,64 @@ Partial Class FrmABMProducto
         Me.txtIdEstado.BackColor = System.Drawing.Color.Azure
         Me.txtIdEstado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtIdEstado.Font = New System.Drawing.Font("Century Gothic", 11.25!)
-        Me.txtIdEstado.Location = New System.Drawing.Point(792, 477)
+        Me.txtIdEstado.Location = New System.Drawing.Point(792, 551)
         Me.txtIdEstado.Name = "txtIdEstado"
         Me.txtIdEstado.Size = New System.Drawing.Size(66, 26)
         Me.txtIdEstado.TabIndex = 88
         Me.txtIdEstado.Visible = False
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 11.25!)
+        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.Location = New System.Drawing.Point(479, 440)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(78, 20)
+        Me.Label1.TabIndex = 90
+        Me.Label1.Text = "Cantidad"
+        '
+        'txtCantidad
+        '
+        Me.txtCantidad.BackColor = System.Drawing.Color.Azure
+        Me.txtCantidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtCantidad.Font = New System.Drawing.Font("Century Gothic", 11.25!)
+        Me.txtCantidad.Location = New System.Drawing.Point(483, 463)
+        Me.txtCantidad.Name = "txtCantidad"
+        Me.txtCantidad.Size = New System.Drawing.Size(267, 26)
+        Me.txtCantidad.TabIndex = 89
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 11.25!)
+        Me.Label2.ForeColor = System.Drawing.Color.Black
+        Me.Label2.Location = New System.Drawing.Point(66, 440)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(105, 20)
+        Me.Label2.TabIndex = 92
+        Me.Label2.Text = "Precio Venta"
+        '
+        'txtPrecioVenta
+        '
+        Me.txtPrecioVenta.BackColor = System.Drawing.Color.Azure
+        Me.txtPrecioVenta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtPrecioVenta.Font = New System.Drawing.Font("Century Gothic", 11.25!)
+        Me.txtPrecioVenta.Location = New System.Drawing.Point(70, 463)
+        Me.txtPrecioVenta.Name = "txtPrecioVenta"
+        Me.txtPrecioVenta.Size = New System.Drawing.Size(267, 26)
+        Me.txtPrecioVenta.TabIndex = 91
         '
         'FrmABMProducto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(859, 734)
+        Me.ClientSize = New System.Drawing.Size(859, 788)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.txtPrecioVenta)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.txtCantidad)
         Me.Controls.Add(Me.txtIdEstado)
         Me.Controls.Add(Me.txtIdRubro)
         Me.Controls.Add(Me.txtIdProveedor)
@@ -601,4 +651,8 @@ Partial Class FrmABMProducto
     Friend WithEvents txtIdProveedor As TextBox
     Friend WithEvents txtIdRubro As TextBox
     Friend WithEvents txtIdEstado As TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents txtCantidad As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents txtPrecioVenta As TextBox
 End Class

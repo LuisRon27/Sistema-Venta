@@ -22,9 +22,9 @@ Partial Class FrmProveedor
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PanelCabecera = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -34,18 +34,6 @@ Partial Class FrmProveedor
         Me.btnmaximizar = New System.Windows.Forms.PictureBox()
         Me.btnCerrar = New System.Windows.Forms.PictureBox()
         Me.GrillaProveedor = New System.Windows.Forms.DataGridView()
-        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.Cmdagregar = New System.Windows.Forms.ToolStripButton()
-        Me.CmdModificar = New System.Windows.Forms.ToolStripButton()
-        Me.Cmdeliminar = New System.Windows.Forms.ToolStripButton()
-        Me.cmdsalir1 = New System.Windows.Forms.ToolStripButton()
-        Me.txtbusqueda = New System.Windows.Forms.TextBox()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.lblseñal = New System.Windows.Forms.Label()
         Me.ID_Producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Apellido = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -61,6 +49,18 @@ Partial Class FrmProveedor
         Me.Activo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IdCiudad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IdCondicion_IVA = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.Cmdagregar = New System.Windows.Forms.ToolStripButton()
+        Me.CmdModificar = New System.Windows.Forms.ToolStripButton()
+        Me.Cmdeliminar = New System.Windows.Forms.ToolStripButton()
+        Me.cmdsalir1 = New System.Windows.Forms.ToolStripButton()
+        Me.txtbusqueda = New System.Windows.Forms.TextBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.lblseñal = New System.Windows.Forms.Label()
         Me.PanelCabecera.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.btn_maximizar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -176,14 +176,14 @@ Partial Class FrmProveedor
         Me.GrillaProveedor.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.GrillaProveedor.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.GrillaProveedor.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(101, Byte), Integer), CType(CType(131, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.GrillaProveedor.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(CType(CType(101, Byte), Integer), CType(CType(131, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.GrillaProveedor.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
         Me.GrillaProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.GrillaProveedor.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID_Producto, Me.Nombre, Me.Apellido, Me.Cuit, Me.Direccion, Me.Telefono, Me.Email, Me.Ciudad, Me.Provincia, Me.Contacto, Me.Condicion_IVA, Me.Observaciones, Me.Activo, Me.IdCiudad, Me.IdCondicion_IVA})
         Me.GrillaProveedor.EnableHeadersVisualStyles = False
@@ -191,23 +191,104 @@ Partial Class FrmProveedor
         Me.GrillaProveedor.Location = New System.Drawing.Point(29, 139)
         Me.GrillaProveedor.Name = "GrillaProveedor"
         Me.GrillaProveedor.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(207, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.GrillaProveedor.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(207, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
-        Me.GrillaProveedor.RowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle11.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(207, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.GrillaProveedor.RowHeadersDefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle12.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle12.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(207, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black
+        Me.GrillaProveedor.RowsDefaultCellStyle = DataGridViewCellStyle12
         Me.GrillaProveedor.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.GrillaProveedor.Size = New System.Drawing.Size(1234, 496)
         Me.GrillaProveedor.TabIndex = 4
+        '
+        'ID_Producto
+        '
+        Me.ID_Producto.HeaderText = "#"
+        Me.ID_Producto.Name = "ID_Producto"
+        '
+        'Nombre
+        '
+        Me.Nombre.HeaderText = "Nombre"
+        Me.Nombre.Name = "Nombre"
+        '
+        'Apellido
+        '
+        Me.Apellido.HeaderText = "Apellido"
+        Me.Apellido.Name = "Apellido"
+        '
+        'Cuit
+        '
+        Me.Cuit.HeaderText = "Cuit"
+        Me.Cuit.Name = "Cuit"
+        '
+        'Direccion
+        '
+        Me.Direccion.HeaderText = "Direccion"
+        Me.Direccion.Name = "Direccion"
+        '
+        'Telefono
+        '
+        Me.Telefono.HeaderText = "Telefono"
+        Me.Telefono.Name = "Telefono"
+        '
+        'Email
+        '
+        Me.Email.HeaderText = "Email"
+        Me.Email.Name = "Email"
+        '
+        'Ciudad
+        '
+        Me.Ciudad.HeaderText = "Ciudad"
+        Me.Ciudad.Name = "Ciudad"
+        '
+        'Provincia
+        '
+        Me.Provincia.HeaderText = "Provincia"
+        Me.Provincia.Name = "Provincia"
+        '
+        'Contacto
+        '
+        Me.Contacto.HeaderText = "Contacto"
+        Me.Contacto.Name = "Contacto"
+        Me.Contacto.Visible = False
+        '
+        'Condicion_IVA
+        '
+        Me.Condicion_IVA.HeaderText = "Condicion IVA"
+        Me.Condicion_IVA.Name = "Condicion_IVA"
+        Me.Condicion_IVA.Visible = False
+        '
+        'Observaciones
+        '
+        Me.Observaciones.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Observaciones.HeaderText = "Observaciones"
+        Me.Observaciones.Name = "Observaciones"
+        '
+        'Activo
+        '
+        Me.Activo.HeaderText = "Activo"
+        Me.Activo.Name = "Activo"
+        Me.Activo.Visible = False
+        '
+        'IdCiudad
+        '
+        Me.IdCiudad.HeaderText = "IdCiudad"
+        Me.IdCiudad.Name = "IdCiudad"
+        Me.IdCiudad.Visible = False
+        '
+        'IdCondicion_IVA
+        '
+        Me.IdCondicion_IVA.HeaderText = "IdCondicion_IVA"
+        Me.IdCondicion_IVA.Name = "IdCondicion_IVA"
+        Me.IdCondicion_IVA.Visible = False
         '
         'ToolStrip1
         '
@@ -348,87 +429,6 @@ Partial Class FrmProveedor
         Me.lblseñal.TabIndex = 104
         Me.lblseñal.Text = "Label1"
         Me.lblseñal.Visible = False
-        '
-        'ID_Producto
-        '
-        Me.ID_Producto.HeaderText = "#"
-        Me.ID_Producto.Name = "ID_Producto"
-        '
-        'Nombre
-        '
-        Me.Nombre.HeaderText = "Nombre"
-        Me.Nombre.Name = "Nombre"
-        '
-        'Apellido
-        '
-        Me.Apellido.HeaderText = "Apellido"
-        Me.Apellido.Name = "Apellido"
-        '
-        'Cuit
-        '
-        Me.Cuit.HeaderText = "Cuit"
-        Me.Cuit.Name = "Cuit"
-        '
-        'Direccion
-        '
-        Me.Direccion.HeaderText = "Direccion"
-        Me.Direccion.Name = "Direccion"
-        '
-        'Telefono
-        '
-        Me.Telefono.HeaderText = "Telefono"
-        Me.Telefono.Name = "Telefono"
-        '
-        'Email
-        '
-        Me.Email.HeaderText = "Email"
-        Me.Email.Name = "Email"
-        '
-        'Ciudad
-        '
-        Me.Ciudad.HeaderText = "Ciudad"
-        Me.Ciudad.Name = "Ciudad"
-        '
-        'Provincia
-        '
-        Me.Provincia.HeaderText = "Provincia"
-        Me.Provincia.Name = "Provincia"
-        '
-        'Contacto
-        '
-        Me.Contacto.HeaderText = "Contacto"
-        Me.Contacto.Name = "Contacto"
-        Me.Contacto.Visible = False
-        '
-        'Condicion_IVA
-        '
-        Me.Condicion_IVA.HeaderText = "Condicion IVA"
-        Me.Condicion_IVA.Name = "Condicion_IVA"
-        Me.Condicion_IVA.Visible = False
-        '
-        'Observaciones
-        '
-        Me.Observaciones.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Observaciones.HeaderText = "Observaciones"
-        Me.Observaciones.Name = "Observaciones"
-        '
-        'Activo
-        '
-        Me.Activo.HeaderText = "Activo"
-        Me.Activo.Name = "Activo"
-        Me.Activo.Visible = False
-        '
-        'IdCiudad
-        '
-        Me.IdCiudad.HeaderText = "IdCiudad"
-        Me.IdCiudad.Name = "IdCiudad"
-        Me.IdCiudad.Visible = False
-        '
-        'IdCondicion_IVA
-        '
-        Me.IdCondicion_IVA.HeaderText = "IdCondicion_IVA"
-        Me.IdCondicion_IVA.Name = "IdCondicion_IVA"
-        Me.IdCondicion_IVA.Visible = False
         '
         'FrmProveedor
         '

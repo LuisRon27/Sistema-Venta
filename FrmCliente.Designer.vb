@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class FrmProducto
+Partial Class FrmCliente
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -33,30 +33,26 @@ Partial Class FrmProducto
         Me.btnMinimizar = New System.Windows.Forms.PictureBox()
         Me.btnmaximizar = New System.Windows.Forms.PictureBox()
         Me.btnCerrar = New System.Windows.Forms.PictureBox()
-        Me.GrillaProducto = New System.Windows.Forms.DataGridView()
+        Me.GrillaCliente = New System.Windows.Forms.DataGridView()
+        Me.ID_Producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Apellido = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Direccion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Email = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Tipo_Cliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Activo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.Cmdagregar = New System.Windows.Forms.ToolStripButton()
         Me.CmdModificar = New System.Windows.Forms.ToolStripButton()
         Me.Cmdeliminar = New System.Windows.Forms.ToolStripButton()
         Me.cmdsalir1 = New System.Windows.Forms.ToolStripButton()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
         Me.txtbusqueda = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.ID_Producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CodigoAlternativo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Proveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Costo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Rubro = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fecha_Carga = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fecha_Actualizacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Porcentaje_IVA = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Imagen = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IdProveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IdRubro = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IdEstado = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Precio_Venta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PanelCabecera.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.btn_maximizar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -64,8 +60,9 @@ Partial Class FrmProducto
         CType(Me.btnMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnmaximizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GrillaProducto, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GrillaCliente, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -78,7 +75,7 @@ Partial Class FrmProducto
         Me.PanelCabecera.Location = New System.Drawing.Point(0, 0)
         Me.PanelCabecera.Name = "PanelCabecera"
         Me.PanelCabecera.Size = New System.Drawing.Size(1386, 40)
-        Me.PanelCabecera.TabIndex = 1
+        Me.PanelCabecera.TabIndex = 3
         '
         'Label5
         '
@@ -87,9 +84,9 @@ Partial Class FrmProducto
         Me.Label5.ForeColor = System.Drawing.Color.White
         Me.Label5.Location = New System.Drawing.Point(21, 10)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(94, 23)
+        Me.Label5.Size = New System.Drawing.Size(84, 23)
         Me.Label5.TabIndex = 14
-        Me.Label5.Text = "Producto"
+        Me.Label5.Text = "Clientes"
         '
         'Panel3
         '
@@ -164,13 +161,13 @@ Partial Class FrmProducto
         Me.btnCerrar.TabIndex = 7
         Me.btnCerrar.TabStop = False
         '
-        'GrillaProducto
+        'GrillaCliente
         '
-        Me.GrillaProducto.AllowUserToAddRows = False
-        Me.GrillaProducto.BackgroundColor = System.Drawing.Color.White
-        Me.GrillaProducto.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.GrillaProducto.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
-        Me.GrillaProducto.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.GrillaCliente.AllowUserToAddRows = False
+        Me.GrillaCliente.BackgroundColor = System.Drawing.Color.White
+        Me.GrillaCliente.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.GrillaCliente.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.GrillaCliente.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(101, Byte), Integer), CType(CType(131, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -178,14 +175,14 @@ Partial Class FrmProducto
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.GrillaProducto.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.GrillaProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.GrillaProducto.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID_Producto, Me.Descripcion, Me.CodigoAlternativo, Me.Proveedor, Me.Costo, Me.Rubro, Me.Estado, Me.Fecha_Carga, Me.Fecha_Actualizacion, Me.Porcentaje_IVA, Me.Imagen, Me.IdProveedor, Me.IdRubro, Me.IdEstado, Me.Cantidad, Me.Precio_Venta})
-        Me.GrillaProducto.EnableHeadersVisualStyles = False
-        Me.GrillaProducto.GridColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(230, Byte), Integer))
-        Me.GrillaProducto.Location = New System.Drawing.Point(25, 131)
-        Me.GrillaProducto.Name = "GrillaProducto"
-        Me.GrillaProducto.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        Me.GrillaCliente.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.GrillaCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.GrillaCliente.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID_Producto, Me.Nombre, Me.Apellido, Me.Direccion, Me.Telefono, Me.Email, Me.Tipo_Cliente, Me.Activo})
+        Me.GrillaCliente.EnableHeadersVisualStyles = False
+        Me.GrillaCliente.GridColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(230, Byte), Integer))
+        Me.GrillaCliente.Location = New System.Drawing.Point(25, 139)
+        Me.GrillaCliente.Name = "GrillaCliente"
+        Me.GrillaCliente.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -193,16 +190,63 @@ Partial Class FrmProducto
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(207, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.GrillaProducto.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.GrillaCliente.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(207, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
-        Me.GrillaProducto.RowsDefaultCellStyle = DataGridViewCellStyle3
-        Me.GrillaProducto.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.GrillaProducto.Size = New System.Drawing.Size(1254, 496)
-        Me.GrillaProducto.TabIndex = 3
+        Me.GrillaCliente.RowsDefaultCellStyle = DataGridViewCellStyle3
+        Me.GrillaCliente.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.GrillaCliente.Size = New System.Drawing.Size(1192, 496)
+        Me.GrillaCliente.TabIndex = 5
+        '
+        'ID_Producto
+        '
+        Me.ID_Producto.HeaderText = "#"
+        Me.ID_Producto.Name = "ID_Producto"
+        '
+        'Nombre
+        '
+        Me.Nombre.HeaderText = "Nombre"
+        Me.Nombre.Name = "Nombre"
+        Me.Nombre.Width = 150
+        '
+        'Apellido
+        '
+        Me.Apellido.HeaderText = "Apellido"
+        Me.Apellido.Name = "Apellido"
+        Me.Apellido.Width = 150
+        '
+        'Direccion
+        '
+        Me.Direccion.HeaderText = "Direccion"
+        Me.Direccion.Name = "Direccion"
+        Me.Direccion.Width = 150
+        '
+        'Telefono
+        '
+        Me.Telefono.HeaderText = "Telefono"
+        Me.Telefono.Name = "Telefono"
+        Me.Telefono.Width = 150
+        '
+        'Email
+        '
+        Me.Email.HeaderText = "Email"
+        Me.Email.Name = "Email"
+        Me.Email.Width = 150
+        '
+        'Tipo_Cliente
+        '
+        Me.Tipo_Cliente.HeaderText = "Tipo Cliente"
+        Me.Tipo_Cliente.Name = "Tipo_Cliente"
+        Me.Tipo_Cliente.Width = 150
+        '
+        'Activo
+        '
+        Me.Activo.HeaderText = "Activo"
+        Me.Activo.Name = "Activo"
+        Me.Activo.Width = 150
         '
         'ToolStrip1
         '
@@ -211,10 +255,10 @@ Partial Class FrmProducto
         Me.ToolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Cmdagregar, Me.CmdModificar, Me.Cmdeliminar, Me.cmdsalir1})
         Me.ToolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow
-        Me.ToolStrip1.Location = New System.Drawing.Point(1300, 128)
+        Me.ToolStrip1.Location = New System.Drawing.Point(1267, 139)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(69, 286)
-        Me.ToolStrip1.TabIndex = 4
+        Me.ToolStrip1.Size = New System.Drawing.Size(69, 305)
+        Me.ToolStrip1.TabIndex = 6
         Me.ToolStrip1.Text = "ToolStrip1"
         '
         'Cmdagregar
@@ -261,130 +305,95 @@ Partial Class FrmProducto
         Me.cmdsalir1.Size = New System.Drawing.Size(67, 68)
         Me.cmdsalir1.Text = "Salir"
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.RadioButton1)
+        Me.GroupBox1.Controls.Add(Me.RadioButton2)
+        Me.GroupBox1.Controls.Add(Me.RadioButton3)
+        Me.GroupBox1.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.ForeColor = System.Drawing.Color.Black
+        Me.GroupBox1.Location = New System.Drawing.Point(898, 68)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(319, 56)
+        Me.GroupBox1.TabIndex = 104
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "State"
+        '
+        'RadioButton1
+        '
+        Me.RadioButton1.AutoSize = True
+        Me.RadioButton1.Checked = True
+        Me.RadioButton1.Font = New System.Drawing.Font("Century Gothic", 11.25!)
+        Me.RadioButton1.ForeColor = System.Drawing.Color.Black
+        Me.RadioButton1.Location = New System.Drawing.Point(232, 22)
+        Me.RadioButton1.Name = "RadioButton1"
+        Me.RadioButton1.Size = New System.Drawing.Size(52, 24)
+        Me.RadioButton1.TabIndex = 104
+        Me.RadioButton1.TabStop = True
+        Me.RadioButton1.Text = "ALL"
+        Me.RadioButton1.UseVisualStyleBackColor = True
+        '
+        'RadioButton2
+        '
+        Me.RadioButton2.AutoSize = True
+        Me.RadioButton2.Font = New System.Drawing.Font("Century Gothic", 11.25!)
+        Me.RadioButton2.ForeColor = System.Drawing.Color.Black
+        Me.RadioButton2.Location = New System.Drawing.Point(122, 22)
+        Me.RadioButton2.Name = "RadioButton2"
+        Me.RadioButton2.Size = New System.Drawing.Size(95, 24)
+        Me.RadioButton2.TabIndex = 103
+        Me.RadioButton2.Text = "INACTIVE"
+        Me.RadioButton2.UseVisualStyleBackColor = True
+        '
+        'RadioButton3
+        '
+        Me.RadioButton3.AutoSize = True
+        Me.RadioButton3.Font = New System.Drawing.Font("Century Gothic", 11.25!)
+        Me.RadioButton3.ForeColor = System.Drawing.Color.Black
+        Me.RadioButton3.Location = New System.Drawing.Point(39, 22)
+        Me.RadioButton3.Name = "RadioButton3"
+        Me.RadioButton3.Size = New System.Drawing.Size(65, 24)
+        Me.RadioButton3.TabIndex = 102
+        Me.RadioButton3.Text = "ASSET"
+        Me.RadioButton3.UseVisualStyleBackColor = True
+        '
         'txtbusqueda
         '
         Me.txtbusqueda.BackColor = System.Drawing.Color.White
         Me.txtbusqueda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtbusqueda.Font = New System.Drawing.Font("Century Gothic", 11.25!)
-        Me.txtbusqueda.Location = New System.Drawing.Point(576, 68)
+        Me.txtbusqueda.Location = New System.Drawing.Point(25, 88)
         Me.txtbusqueda.Name = "txtbusqueda"
-        Me.txtbusqueda.Size = New System.Drawing.Size(216, 26)
-        Me.txtbusqueda.TabIndex = 5
+        Me.txtbusqueda.Size = New System.Drawing.Size(276, 26)
+        Me.txtbusqueda.TabIndex = 105
         Me.txtbusqueda.Text = "Buscar..."
         '
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.Negocio.My.Resources.Resources.find_search_document_6167
-        Me.PictureBox1.Location = New System.Drawing.Point(800, 64)
+        Me.PictureBox1.Location = New System.Drawing.Point(316, 82)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(32, 32)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox1.TabIndex = 6
+        Me.PictureBox1.TabIndex = 106
         Me.PictureBox1.TabStop = False
         '
-        'ID_Producto
-        '
-        Me.ID_Producto.HeaderText = "#"
-        Me.ID_Producto.Name = "ID_Producto"
-        '
-        'Descripcion
-        '
-        Me.Descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Descripcion.HeaderText = "Descripcion"
-        Me.Descripcion.Name = "Descripcion"
-        '
-        'CodigoAlternativo
-        '
-        Me.CodigoAlternativo.HeaderText = "Codigo Alternativo"
-        Me.CodigoAlternativo.Name = "CodigoAlternativo"
-        '
-        'Proveedor
-        '
-        Me.Proveedor.HeaderText = "Proveedor"
-        Me.Proveedor.Name = "Proveedor"
-        '
-        'Costo
-        '
-        Me.Costo.HeaderText = "Costo"
-        Me.Costo.Name = "Costo"
-        '
-        'Rubro
-        '
-        Me.Rubro.HeaderText = "Rubro"
-        Me.Rubro.Name = "Rubro"
-        '
-        'Estado
-        '
-        Me.Estado.HeaderText = "Estado"
-        Me.Estado.Name = "Estado"
-        '
-        'Fecha_Carga
-        '
-        Me.Fecha_Carga.HeaderText = "Fecha Carga"
-        Me.Fecha_Carga.Name = "Fecha_Carga"
-        '
-        'Fecha_Actualizacion
-        '
-        Me.Fecha_Actualizacion.HeaderText = "Fecha Act."
-        Me.Fecha_Actualizacion.Name = "Fecha_Actualizacion"
-        '
-        'Porcentaje_IVA
-        '
-        Me.Porcentaje_IVA.HeaderText = "% IVA"
-        Me.Porcentaje_IVA.Name = "Porcentaje_IVA"
-        Me.Porcentaje_IVA.Visible = False
-        '
-        'Imagen
-        '
-        Me.Imagen.HeaderText = "Imagen"
-        Me.Imagen.Name = "Imagen"
-        Me.Imagen.Visible = False
-        '
-        'IdProveedor
-        '
-        Me.IdProveedor.HeaderText = "IdProveedor"
-        Me.IdProveedor.Name = "IdProveedor"
-        Me.IdProveedor.Visible = False
-        '
-        'IdRubro
-        '
-        Me.IdRubro.HeaderText = "IdRubro"
-        Me.IdRubro.Name = "IdRubro"
-        Me.IdRubro.Visible = False
-        '
-        'IdEstado
-        '
-        Me.IdEstado.HeaderText = "IdEstado"
-        Me.IdEstado.Name = "IdEstado"
-        Me.IdEstado.Visible = False
-        '
-        'Cantidad
-        '
-        Me.Cantidad.HeaderText = "Cantidad"
-        Me.Cantidad.Name = "Cantidad"
-        '
-        'Precio_Venta
-        '
-        Me.Precio_Venta.HeaderText = "Precio Venta"
-        Me.Precio_Venta.Name = "Precio_Venta"
-        Me.Precio_Venta.Visible = False
-        '
-        'FrmProducto
+        'FrmCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1386, 662)
+        Me.ClientSize = New System.Drawing.Size(1386, 745)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.txtbusqueda)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.ToolStrip1)
-        Me.Controls.Add(Me.GrillaProducto)
+        Me.Controls.Add(Me.GrillaCliente)
         Me.Controls.Add(Me.PanelCabecera)
-        Me.ForeColor = System.Drawing.SystemColors.ControlText
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "FrmProducto"
+        Me.Name = "FrmCliente"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "FrmProducto"
+        Me.Text = "FrmCliente"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.PanelCabecera.ResumeLayout(False)
         Me.PanelCabecera.PerformLayout()
@@ -394,9 +403,11 @@ Partial Class FrmProducto
         CType(Me.btnMinimizar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnmaximizar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnCerrar, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GrillaProducto, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GrillaCliente, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -411,28 +422,24 @@ Partial Class FrmProducto
     Friend WithEvents btnMinimizar As PictureBox
     Friend WithEvents btnmaximizar As PictureBox
     Friend WithEvents btnCerrar As PictureBox
-    Friend WithEvents GrillaProducto As DataGridView
+    Friend WithEvents GrillaCliente As DataGridView
     Friend WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents Cmdagregar As ToolStripButton
     Friend WithEvents CmdModificar As ToolStripButton
     Friend WithEvents Cmdeliminar As ToolStripButton
     Friend WithEvents cmdsalir1 As ToolStripButton
-    Friend WithEvents txtbusqueda As TextBox
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents RadioButton1 As RadioButton
+    Friend WithEvents RadioButton2 As RadioButton
+    Friend WithEvents RadioButton3 As RadioButton
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents txtbusqueda As TextBox
     Friend WithEvents ID_Producto As DataGridViewTextBoxColumn
-    Friend WithEvents Descripcion As DataGridViewTextBoxColumn
-    Friend WithEvents CodigoAlternativo As DataGridViewTextBoxColumn
-    Friend WithEvents Proveedor As DataGridViewTextBoxColumn
-    Friend WithEvents Costo As DataGridViewTextBoxColumn
-    Friend WithEvents Rubro As DataGridViewTextBoxColumn
-    Friend WithEvents Estado As DataGridViewTextBoxColumn
-    Friend WithEvents Fecha_Carga As DataGridViewTextBoxColumn
-    Friend WithEvents Fecha_Actualizacion As DataGridViewTextBoxColumn
-    Friend WithEvents Porcentaje_IVA As DataGridViewTextBoxColumn
-    Friend WithEvents Imagen As DataGridViewTextBoxColumn
-    Friend WithEvents IdProveedor As DataGridViewTextBoxColumn
-    Friend WithEvents IdRubro As DataGridViewTextBoxColumn
-    Friend WithEvents IdEstado As DataGridViewTextBoxColumn
-    Friend WithEvents Cantidad As DataGridViewTextBoxColumn
-    Friend WithEvents Precio_Venta As DataGridViewTextBoxColumn
+    Friend WithEvents Nombre As DataGridViewTextBoxColumn
+    Friend WithEvents Apellido As DataGridViewTextBoxColumn
+    Friend WithEvents Direccion As DataGridViewTextBoxColumn
+    Friend WithEvents Telefono As DataGridViewTextBoxColumn
+    Friend WithEvents Email As DataGridViewTextBoxColumn
+    Friend WithEvents Tipo_Cliente As DataGridViewTextBoxColumn
+    Friend WithEvents Activo As DataGridViewTextBoxColumn
 End Class

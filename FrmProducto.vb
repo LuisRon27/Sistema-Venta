@@ -60,7 +60,7 @@
 
         acciones.CommandType = CommandType.Text
 
-        acciones.CommandText = "select Producto.ID, Producto.Descripcion, Producto.CodigoAlternativo, Proveedor.Nombre, Producto.Costo, Rubro.Descripcion, Estado.Descripcion, Producto.Fecha_Carga, Producto.Fecha_Actualizacion, Producto.Porcentaje_IVA, Producto.Imagen,Producto.Proveedor, Producto.Rubro,Producto.Estado from Rubro, Estado, Proveedor,Producto where Rubro.ID = Producto.Rubro and Estado.ID = Producto.Estado and Proveedor.ID = Producto.Proveedor order by Producto.ID"
+        acciones.CommandText = "select Producto.ID, Producto.Descripcion, Producto.CodigoAlternativo, Proveedor.Nombre, Producto.Costo, Rubro.Descripcion, Estado.Descripcion, Producto.Fecha_Carga, Producto.Fecha_Actualizacion, Producto.Porcentaje_IVA, Producto.Imagen,Producto.Proveedor, Producto.Rubro,Producto.Estado, Producto.Cantidad, Producto.Precio_Venta from Rubro, Estado, Proveedor,Producto where Rubro.ID = Producto.Rubro and Estado.ID = Producto.Estado and Proveedor.ID = Producto.Proveedor order by Producto.ID"
         lectordatos = acciones.ExecuteReader
 
         If lectordatos.HasRows Then
@@ -68,7 +68,7 @@
             While lectordatos.Read()
 
                 'agrego los datos a la grilla
-                GrillaProducto.Rows.Add(lectordatos(0), lectordatos(1), lectordatos(2), lectordatos(3), lectordatos(4), lectordatos(5), lectordatos(6), lectordatos(7), lectordatos(8), lectordatos(9), lectordatos(10), lectordatos(11), lectordatos(12), lectordatos(13))
+                GrillaProducto.Rows.Add(lectordatos(0), lectordatos(1), lectordatos(2), lectordatos(3), lectordatos(4), lectordatos(5), lectordatos(6), lectordatos(7), lectordatos(8), lectordatos(9), lectordatos(10), lectordatos(11), lectordatos(12), lectordatos(13), lectordatos(14), lectordatos(15))
 
             End While
 
@@ -92,7 +92,7 @@
 
         acciones.CommandType = CommandType.Text
 
-        acciones.CommandText = "select Producto.ID, Producto.Descripcion, Producto.CodigoAlternativo, Proveedor.Nombre, Producto.Costo, Rubro.Descripcion, Estado.Descripcion, Producto.Fecha_Carga, Producto.Fecha_Actualizacion, Producto.Porcentaje_IVA, Producto.Imagen,Producto.Proveedor, Producto.Rubro,Producto.Estado from Rubro, Estado, Proveedor,Producto where Rubro.ID = Producto.Rubro and Estado.ID = Producto.Estado and Proveedor.ID = Producto.Proveedor and (Producto.ID like '" & "%" + id + "%" & "' or Producto.Descripcion like '" & "%" + id + "%" & "') "
+        acciones.CommandText = "select Producto.ID, Producto.Descripcion, Producto.CodigoAlternativo, Proveedor.Nombre, Producto.Costo, Rubro.Descripcion, Estado.Descripcion, Producto.Fecha_Carga, Producto.Fecha_Actualizacion, Producto.Porcentaje_IVA, Producto.Imagen,Producto.Proveedor, Producto.Rubro,Producto.Estado, Producto.Cantidad, Producto.Precio_Venta from Rubro, Estado, Proveedor,Producto where Rubro.ID = Producto.Rubro and Estado.ID = Producto.Estado and Proveedor.ID = Producto.Proveedor and (Producto.ID like '" & "%" + id + "%" & "' or Producto.Descripcion like '" & "%" + id + "%" & "') "
 
         lectordatos = acciones.ExecuteReader
         If lectordatos.HasRows Then
@@ -100,7 +100,7 @@
             While lectordatos.Read()
 
                 'agrego los datos a la grilla
-                GrillaProducto.Rows.Add(lectordatos(0), lectordatos(1), lectordatos(2), lectordatos(3), lectordatos(4), lectordatos(5), lectordatos(6), lectordatos(7), lectordatos(8), lectordatos(9), lectordatos(10))
+                GrillaProducto.Rows.Add(lectordatos(0), lectordatos(1), lectordatos(2), lectordatos(3), lectordatos(4), lectordatos(5), lectordatos(6), lectordatos(7), lectordatos(8), lectordatos(9), lectordatos(10), lectordatos(11), lectordatos(12), lectordatos(13), lectordatos(14), lectordatos(15))
 
             End While
 
@@ -150,6 +150,9 @@
         FrmABMProducto.txtIdProveedor.Text = GrillaProducto.CurrentRow.Cells(11).Value
         FrmABMProducto.txtIdRubro.Text = GrillaProducto.CurrentRow.Cells(12).Value
         FrmABMProducto.txtIdEstado.Text = GrillaProducto.CurrentRow.Cells(13).Value
+
+        FrmABMProducto.txtCantidad.Text = GrillaProducto.CurrentRow.Cells(14).Value
+        FrmABMProducto.txtPrecioVenta.Text = GrillaProducto.CurrentRow.Cells(15).Value
 
         FrmABMProducto.Show()
 

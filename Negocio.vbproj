@@ -79,6 +79,12 @@
     <Compile Include="FrmABMCiudad.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmABMCliente.Designer.vb">
+      <DependentUpon>FrmABMCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmABMCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmABMCondicionIVA.Designer.vb">
       <DependentUpon>FrmABMCondicionIVA.vb</DependentUpon>
     </Compile>
@@ -113,6 +119,12 @@
       <DependentUpon>FrmCiudad.vb</DependentUpon>
     </Compile>
     <Compile Include="FrmCiudad.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCliente.Designer.vb">
+      <DependentUpon>FrmCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCliente.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmCondicionIVA.Designer.vb">
@@ -174,6 +186,9 @@
     <EmbeddedResource Include="FrmABMCiudad.resx">
       <DependentUpon>FrmABMCiudad.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmABMCliente.resx">
+      <DependentUpon>FrmABMCliente.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmABMCondicionIVA.resx">
       <DependentUpon>FrmABMCondicionIVA.vb</DependentUpon>
     </EmbeddedResource>
@@ -191,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCiudad.resx">
       <DependentUpon>FrmCiudad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCliente.resx">
+      <DependentUpon>FrmCliente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCondicionIVA.resx">
       <DependentUpon>FrmCondicionIVA.vb</DependentUpon>
@@ -288,6 +306,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\imageup_imagen_12892.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clientes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\venta.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

@@ -13,6 +13,7 @@ Public Class FrmABMProducto
         Me.BeginInvoke(Sub() txtDescripcion.Focus()) ' establece el foco en el txtDescripcion
         txtid.Enabled = False 'Desabilitar txtid 
         txtRubro.Enabled = False
+        txtPrecioVenta.Enabled = False
         txtEstado.Enabled = False
         txtproveedor.Enabled = False
         txtImagen.Enabled = False
@@ -85,7 +86,7 @@ Public Class FrmABMProducto
 
         If lblseñal.Text = "AGREGAR" Then
 
-            If txtDescripcion.Text.Trim() = "" Or txtCodigoAlternativo.Text.Trim() = "" Or txtproveedor.Text.Trim() = "" Or txtcosto.Text.Trim() = "" Or cbIVA.SelectedItem Is Nothing Or txtRubro.Text.Trim() = "" Or txtEstado.Text.Trim() = "" Or txtImagen.Text.Trim() = "" Then
+            If txtDescripcion.Text.Trim() = "" Or txtCodigoAlternativo.Text.Trim() = "" Or txtproveedor.Text.Trim() = "" Or txtcosto.Text.Trim() = "" Or cbIVA.SelectedItem Is Nothing Or txtRubro.Text.Trim() = "" Or txtEstado.Text.Trim() = "" Or txtImagen.Text.Trim() = "" Or txtCantidad.Text.Trim() = "" Or txtPrecioVenta.Text.Trim() = "" Then
                 MessageBox.Show("Debe completar todos los campos antes de continuar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Return
             End If
@@ -95,7 +96,7 @@ Public Class FrmABMProducto
 
                 acciones.Connection = conexionSql
                 acciones.CommandType = CommandType.Text
-                acciones.CommandText = "INSERT INTO Producto(Descripcion, CodigoAlternativo,Proveedor, Costo, Rubro, Estado, Fecha_Carga, Fecha_Actualizacion,Porcentaje_IVA,Imagen)VALUES('" & txtDescripcion.Text & "','" & txtCodigoAlternativo.Text & "', '" & txtIdProveedor.Text & "', '" & txtcosto.Text & "','" & txtIdRubro.Text & "','" & txtIdEstado.Text & "','" & dtFechaCarga.Value & "','" & dtFechaActualizacion.Value & "','" & cbIVA.Text & "','" & txtImagen.Text & "')"
+                acciones.CommandText = "INSERT INTO Producto(Descripcion, CodigoAlternativo,Proveedor, Costo, Rubro, Estado, Fecha_Carga, Fecha_Actualizacion,Porcentaje_IVA,Imagen, Cantidad, Precio_Venta)VALUES('" & txtDescripcion.Text & "','" & txtCodigoAlternativo.Text & "', '" & txtIdProveedor.Text & "', '" & txtcosto.Text & "','" & txtIdRubro.Text & "','" & txtIdEstado.Text & "','" & dtFechaCarga.Value & "','" & dtFechaActualizacion.Value & "','" & cbIVA.Text & "','" & txtImagen.Text & "','" & txtCantidad.Text & "','" & txtPrecioVenta.Text & "')"
                 acciones.ExecuteNonQuery()
 
                 'conexion.close
@@ -118,7 +119,7 @@ Public Class FrmABMProducto
 
         If lblseñal.Text = "MODIFICAR" Then
 
-            If txtDescripcion.Text.Trim() = "" Or txtCodigoAlternativo.Text.Trim() = "" Or txtproveedor.Text.Trim() = "" Or txtcosto.Text.Trim() = "" Or cbIVA.SelectedItem Is Nothing Or txtRubro.Text.Trim() = "" Or txtEstado.Text.Trim() = "" Or txtImagen.Text.Trim() = "" Then
+            If txtDescripcion.Text.Trim() = "" Or txtCodigoAlternativo.Text.Trim() = "" Or txtproveedor.Text.Trim() = "" Or txtcosto.Text.Trim() = "" Or cbIVA.SelectedItem Is Nothing Or txtRubro.Text.Trim() = "" Or txtEstado.Text.Trim() = "" Or txtImagen.Text.Trim() = "" Or txtCantidad.Text.Trim() = "" Or txtPrecioVenta.Text.Trim() = "" Then
                 MessageBox.Show("Debe completar todos los campos antes de continuar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Return
             End If
@@ -128,7 +129,7 @@ Public Class FrmABMProducto
 
                 acciones.Connection = conexionSql
                 acciones.CommandType = CommandType.Text
-                acciones.CommandText = "UPDATE Producto SET Descripcion = '" & txtDescripcion.Text & "' ,CodigoAlternativo = '" & txtCodigoAlternativo.Text & "',Proveedor = '" & txtIdProveedor.Text & "' ,Costo = '" & txtcosto.Text & "',Rubro = '" & txtIdRubro.Text & "' ,Estado = '" & txtIdEstado.Text & "' ,Fecha_Carga = '" & dtFechaCarga.Value & "' ,Fecha_Actualizacion = '" & dtFechaActualizacion.Value & "' ,Porcentaje_IVA = '" & cbIVA.Text & "' ,Imagen = '" & txtImagen.Text & "'  where ID = " & txtid.Text & ""
+                acciones.CommandText = "UPDATE Producto SET Descripcion = '" & txtDescripcion.Text & "' ,CodigoAlternativo = '" & txtCodigoAlternativo.Text & "',Proveedor = '" & txtIdProveedor.Text & "' ,Costo = '" & txtcosto.Text & "',Rubro = '" & txtIdRubro.Text & "' ,Estado = '" & txtIdEstado.Text & "' ,Fecha_Carga = '" & dtFechaCarga.Value & "' ,Fecha_Actualizacion = '" & dtFechaActualizacion.Value & "' ,Porcentaje_IVA = '" & cbIVA.Text & "' ,Imagen = '" & txtImagen.Text & "',Cantidad = '" & txtCantidad.Text & "',Precio_Venta = '" & txtPrecioVenta.Text & "'  where ID = " & txtid.Text & ""
                 acciones.ExecuteNonQuery()
 
                 'conexion.close
@@ -170,5 +171,34 @@ Public Class FrmABMProducto
         FrmEstado.Show()
     End Sub
 
+    Private Sub txtCantidad_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCantidad.KeyPress
 
+        If Not Char.IsNumber(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+
+    End Sub
+
+    Private Sub txtcosto_TextChanged(sender As Object, e As EventArgs) Handles txtcosto.TextChanged
+        CalcularPrecioVenta()
+    End Sub
+
+    Private Sub cbIVA_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbIVA.SelectedIndexChanged
+        CalcularPrecioVenta()
+    End Sub
+
+    Private Sub CalcularPrecioVenta()
+
+        Dim costo As Double
+
+        If Double.TryParse(txtcosto.Text, costo) Then
+            Dim porcentaje As Double = CDbl(cbIVA.SelectedItem)
+            Dim precioVenta As Double = costo + (costo * (porcentaje / 100))
+            txtPrecioVenta.Text = precioVenta.ToString()
+        End If
+    End Sub
+
+    Private Sub PanelCabecera_Paint(sender As Object, e As PaintEventArgs) Handles PanelCabecera.Paint
+
+    End Sub
 End Class
