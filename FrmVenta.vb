@@ -37,21 +37,26 @@
         FrmCliente.Show()
     End Sub
 
+    Public Sub Clear()
+
+        txtidCliente.Clear()
+        txtNombre.Clear()
+        txtApellido.Clear()
+        txtTotalVenta.Clear()
+        RadioButton2.Checked = True
+        RadioButton1.Checked = True
+        GrillaVenta.Rows.Clear()
+    End Sub
+
+
     Private Sub cmdCancelar_Click(sender As Object, e As EventArgs) Handles cmdCancelar.Click
 
         Dim result2 As Integer = MessageBox.Show("¿Esta seguro que desea Cancelar la Venta?", "Mensaje del sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
 
         If result2 = DialogResult.Yes Then
 
-            txtcomprobante.Clear()
-            txtidCliente.Clear()
-            txtNombre.Clear()
-            txtApellido.Clear()
-            txtTotalVenta.Clear()
-            RadioButton2.Checked = True
-            RadioButton1.Checked = True
-            GrillaVenta.Rows.Clear()
 
+            Clear()
 
         End If
 
@@ -81,6 +86,34 @@
         AddHandler GrillaVenta.RowsAdded, AddressOf ActualizarTotalVenta
         AddHandler GrillaVenta.RowsRemoved, AddressOf ActualizarTotalVenta
         ActualizarTotalVenta(Nothing, Nothing)
+
+        Auto_GenerateComprobante()
+    End Sub
+
+    Sub Auto_GenerateComprobante()
+
+        Try
+
+            acciones.Connection = conexionSql
+            acciones.CommandType = CommandType.Text
+            acciones.CommandText = "SELECT * FROM Detalle_Venta Order By ID_Detalle_Venta desc"
+            lectordatos = acciones.ExecuteReader
+            lectordatos.Read()
+
+            If lectordatos.HasRows Then
+                lblComprobante.Text = lectordatos.Item("Nro_Comprobante").ToString + 1
+            Else
+                lblComprobante.Text = Date.Now.ToString("yyyyMM") & "001"
+
+
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+
+        End Try
+        lectordatos.Close()
+
     End Sub
 
     Private Sub Cmdeliminar_Click(sender As Object, e As EventArgs) Handles Cmdeliminar.Click
@@ -96,4 +129,239 @@
 
 
     End Sub
+
+    Public Sub Validar()
+
+        If txtidCliente.Text.Trim() = "" Or txtNombre.Text.Trim() = "" Or txtApellido.Text.Trim() = "" Or txtTotalVenta.Text.Trim() = "" Then
+            MessageBox.Show("Debe completar todos los campos antes de continuar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+
+        ElseIf txtTotalVenta.Text.Trim() = 0 Then
+
+            MessageBox.Show("El Precio Total No puede ser $0.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+
+        End If
+
+    End Sub
+
+    Public Sub Update_Product()
+        Try
+            ' Iterar a través de las filas de la DataGridView
+            For Each fila As DataGridViewRow In GrillaVenta.Rows
+                Dim codigo As String = fila.Cells("ID_Producto").Value.ToString()
+                Dim cantidadVendida As Integer = Convert.ToInt32(fila.Cells("Cantidad").Value)
+
+
+                ' Crear la consulta parametrizada
+                acciones.Connection = conexionSql
+                acciones.CommandType = CommandType.Text
+                acciones.CommandText = "UPDATE Producto SET Cantidad = Cantidad - @CantidadVendida WHERE ID = @IDProducto"
+
+                acciones.Parameters.Clear()
+
+                ' Asignar los valores de los parámetros
+                acciones.Parameters.AddWithValue("@IDProducto", codigo)
+                acciones.Parameters.AddWithValue("@CantidadVendida", cantidadVendida)
+
+                ' Ejecutar el comando para guardar los datos
+                acciones.ExecuteNonQuery()
+            Next
+
+            MsgBox("Datos actualizados correctamente", vbOKOnly + vbInformation)
+
+        Catch ex As Exception
+            MsgBox("Error al Actualizar la tabla Producto: " & ex.ToString())
+        End Try
+    End Sub
+
+    Public Sub InsertarDetallesVenta()
+        'TABLA DETALLE VENTA
+        Try
+
+            ' Iterar a través de las filas de la DataGridView
+            For Each fila As DataGridViewRow In GrillaVenta.Rows
+                Dim codigo As String = fila.Cells("ID_Producto").Value.ToString()
+                Dim descripcion As String = fila.Cells("Descripcion").Value.ToString()
+                Dim cantidad As Integer = Convert.ToInt32(fila.Cells("Cantidad").Value)
+                Dim precioUnitario As Decimal = Convert.ToDecimal(fila.Cells("Precio_Unitario").Value)
+                Dim total As Decimal = Convert.ToDecimal(fila.Cells("Total").Value)
+
+                ' Crear la consulta parametrizada
+                acciones.Connection = conexionSql
+                acciones.CommandType = CommandType.Text
+                acciones.CommandText = "INSERT INTO Detalle_Venta(Nro_Comprobante, ID_Producto, Descripcion, Cantidad, Precio_Unitario, Precio_Total)" &
+                          "VALUES (@Nro_Comprobante, @ID_Producto, @Descripcion, @Cantidad, @Precio_Unitario, @Precio_Total)"
+
+                acciones.Parameters.Clear()
+
+                ' Asignar los valores de los parámetros
+                acciones.Parameters.AddWithValue("@Nro_Comprobante", lblComprobante.Text)
+                acciones.Parameters.AddWithValue("@ID_Producto", codigo)
+                acciones.Parameters.AddWithValue("@Descripcion", descripcion)
+                acciones.Parameters.AddWithValue("@Cantidad", cantidad)
+                acciones.Parameters.AddWithValue("@Precio_Unitario", precioUnitario)
+                acciones.Parameters.AddWithValue("@Precio_Total", total)
+
+
+                ' Ejecutar el comando para guardar los datos
+                acciones.ExecuteNonQuery()
+
+
+            Next
+
+            MsgBox("DATOS GUARDADOS", vbOKOnly + vbInformation)
+
+
+
+        Catch ex As Exception
+            MsgBox("Error al Insertar Datos en la tabla Detalle_Venta: " & ex.ToString())
+        End Try
+    End Sub
+    Private Sub cmdGrabar_Click(sender As Object, e As EventArgs) Handles cmdGrabar.Click
+
+        'TODO: Separa la lógica de guardar los datos en la base de datos en funciones independientes para cada tipo de venta (corriente y contado).
+
+        'SI es Venta Corriente... 
+        If RadioButton1.Checked = True Then
+
+            'Verificar si los campos no estan vacios 
+            Validar()
+
+            'TABLA Cuenta Corriente
+            Try
+
+                'Verificar RadioButton 
+                Dim tipoVenta As String = ""
+
+                If RadioButton1.Checked Then
+                    tipoVenta = "Corriente"
+                ElseIf RadioButton3.Checked Then
+                    tipoVenta = "Contado"
+                End If
+
+                Dim tipoComprobante As String = ""
+
+
+                If RadioButton2.Checked Then
+                    tipoComprobante = "Venta"
+                ElseIf RadioButton4.Checked Then
+                    tipoComprobante = "Devolucion"
+                End If
+
+                ' Crear la consulta parametrizada
+                acciones.Connection = conexionSql
+                acciones.CommandType = CommandType.Text
+                acciones.CommandText = "INSERT INTO Cuenta_Corriente(ID_Cliente, Nombre, Apellido, Tipo_Venta, Tipo_Comprobante, Total_Venta, Nro_Comprobante)VALUES(@IDCliente, @Nombre, @Apellido, @TipoVenta, @TipoComprobante, @TotalVenta, @NroComprobante)"
+
+                acciones.Parameters.Clear()
+
+                ' Asignar los valores de los parámetros
+                acciones.Parameters.AddWithValue("@IDCliente", txtidCliente.Text)
+                acciones.Parameters.AddWithValue("@Nombre", txtNombre.Text)
+                acciones.Parameters.AddWithValue("@Apellido", txtApellido.Text)
+                acciones.Parameters.AddWithValue("@TipoVenta", tipoVenta)
+                acciones.Parameters.AddWithValue("@TipoComprobante", tipoComprobante)
+                acciones.Parameters.AddWithValue("@TotalVenta", txtTotalVenta.Text)
+                acciones.Parameters.AddWithValue("@NroComprobante", lblComprobante.Text)
+
+                ' Ejecutar el comando para guardar los datos
+                acciones.ExecuteNonQuery()
+
+                MsgBox("DATOS GUARDADOS", vbOKOnly + vbInformation)
+
+
+
+            Catch ex As Exception
+                MsgBox("Error al Insertar Datos en la tabla Cuenta_Corriente: " & ex.ToString())
+            End Try
+
+            'Insertar Datos en la TABLA DETALLE VENTA
+            InsertarDetallesVenta()
+
+            'Actualizar Tabla Producto
+            Update_Product()
+
+            'Limpiar formulario
+            Clear()
+
+            'Actualiza el numero de comprobante
+            Auto_GenerateComprobante()
+
+
+            'Si es venta al Contado...
+        ElseIf RadioButton3.Checked = True Then
+
+
+            'Verificar si los campos no estan vacios 
+            Validar()
+
+
+            'TABLA Venta (al CONTADO)
+            Try
+
+
+                'Verificar RadioButton 
+                Dim tipoVenta As String = ""
+
+                If RadioButton1.Checked Then
+                    tipoVenta = "Corriente"
+                ElseIf RadioButton3.Checked Then
+                    tipoVenta = "Contado"
+                End If
+
+                Dim tipoComprobante As String = ""
+
+
+                If RadioButton2.Checked Then
+                    tipoComprobante = "Venta"
+                ElseIf RadioButton4.Checked Then
+                    tipoComprobante = "Devolucion"
+                End If
+
+                ' Crear la consulta parametrizada
+                acciones.Connection = conexionSql
+                acciones.CommandType = CommandType.Text
+                acciones.CommandText = "INSERT INTO Venta(ID_Cliente, Nombre, Apellido, Tipo_Venta, Tipo_Comprobante, Total_Venta, Nro_Comprobante)VALUES(@IDCliente, @Nombre, @Apellido, @TipoVenta, @TipoComprobante, @TotalVenta, @NroComprobante)"
+
+                acciones.Parameters.Clear()
+
+                ' Asignar los valores de los parámetros
+                acciones.Parameters.AddWithValue("@IDCliente", txtidCliente.Text)
+                acciones.Parameters.AddWithValue("@Nombre", txtNombre.Text)
+                acciones.Parameters.AddWithValue("@Apellido", txtApellido.Text)
+                acciones.Parameters.AddWithValue("@TipoVenta", tipoVenta)
+                acciones.Parameters.AddWithValue("@TipoComprobante", tipoComprobante)
+                acciones.Parameters.AddWithValue("@TotalVenta", txtTotalVenta.Text)
+                acciones.Parameters.AddWithValue("@NroComprobante", lblComprobante.Text)
+
+                ' Ejecutar el comando para guardar los datos
+                acciones.ExecuteNonQuery()
+
+                MsgBox("DATOS GUARDADOS", vbOKOnly + vbInformation)
+
+
+
+            Catch ex As Exception
+                MsgBox("Error al Insertar Datos en la tabla Venta (AL CONTADO): " & ex.ToString())
+            End Try
+
+
+            'Insertar Datos en la TABLA DETALLE VENTA
+            InsertarDetallesVenta()
+
+            'Actualizar Tabla Producto
+            Update_Product()
+
+            'Limpiar formulario
+            Clear()
+
+            'Actualiza el numero de comprobante
+            Auto_GenerateComprobante()
+
+        End If
+
+    End Sub
+
+
 End Class
