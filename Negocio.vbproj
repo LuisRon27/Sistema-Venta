@@ -11,9 +11,10 @@
     <AssemblyName>Negocio</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -48,6 +49,9 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -164,6 +168,12 @@
     <Compile Include="FrmProveedor.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmReporte.Designer.vb">
+      <DependentUpon>FrmReporte.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReporte.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmRubro.Designer.vb">
       <DependentUpon>FrmRubro.vb</DependentUpon>
     </Compile>
@@ -175,6 +185,24 @@
     </Compile>
     <Compile Include="FrmVenta.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVentaxCliente.Designer.vb">
+      <DependentUpon>FrmVentaxCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmVentaxCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVentaxProducto.Designer.vb">
+      <DependentUpon>FrmVentaxProducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmVentaxProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InfVentaxPeriodo.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InfVentaxPeriodo.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Modulo.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -245,6 +273,16 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmVenta.resx">
       <DependentUpon>FrmVenta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVentaxCliente.resx">
+      <DependentUpon>FrmVentaxCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVentaxProducto.resx">
+      <DependentUpon>FrmVentaxProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfVentaxPeriodo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InfVentaxPeriodo.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -330,6 +368,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\venta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apps_printer_15747.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

@@ -39,7 +39,6 @@ Partial Class FrmVenta
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.lblID = New System.Windows.Forms.Label()
         Me.txtidCliente = New System.Windows.Forms.TextBox()
-        Me.btnBuscarCliente = New System.Windows.Forms.PictureBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.RadioButton3 = New System.Windows.Forms.RadioButton()
@@ -68,6 +67,11 @@ Partial Class FrmVenta
         Me.txtTotalVenta = New System.Windows.Forms.TextBox()
         Me.lblComprobante = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.ParametrosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ventaxPeriodoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ventasxclientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btnBuscarCliente = New System.Windows.Forms.PictureBox()
         Me.PanelCabecera.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.btn_maximizar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -75,13 +79,14 @@ Partial Class FrmVenta
         CType(Me.btnMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnmaximizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnBuscarCliente, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.GrillaVenta, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
         Me.ToolStrip2.SuspendLayout()
         Me.Panel1.SuspendLayout()
+        Me.MenuStrip1.SuspendLayout()
+        CType(Me.btnBuscarCliente, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanelCabecera
@@ -244,17 +249,6 @@ Partial Class FrmVenta
         Me.txtidCliente.Name = "txtidCliente"
         Me.txtidCliente.Size = New System.Drawing.Size(123, 26)
         Me.txtidCliente.TabIndex = 59
-        '
-        'btnBuscarCliente
-        '
-        Me.btnBuscarCliente.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnBuscarCliente.Image = Global.Negocio.My.Resources.Resources.find_search_document_6167
-        Me.btnBuscarCliente.Location = New System.Drawing.Point(252, 175)
-        Me.btnBuscarCliente.Name = "btnBuscarCliente"
-        Me.btnBuscarCliente.Size = New System.Drawing.Size(32, 32)
-        Me.btnBuscarCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.btnBuscarCliente.TabIndex = 71
-        Me.btnBuscarCliente.TabStop = False
         '
         'GroupBox1
         '
@@ -583,12 +577,54 @@ Partial Class FrmVenta
         Me.Label6.TabIndex = 117
         Me.Label6.Text = "#"
         '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ParametrosToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 40)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(1386, 24)
+        Me.MenuStrip1.TabIndex = 118
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'ParametrosToolStripMenuItem
+        '
+        Me.ParametrosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ventaxPeriodoToolStripMenuItem, Me.ventasxclientesToolStripMenuItem})
+        Me.ParametrosToolStripMenuItem.Image = Global.Negocio.My.Resources.Resources._1904675_configuration_edit_gear_options_preferences_setting_settings_122525
+        Me.ParametrosToolStripMenuItem.Name = "ParametrosToolStripMenuItem"
+        Me.ParametrosToolStripMenuItem.Size = New System.Drawing.Size(90, 20)
+        Me.ParametrosToolStripMenuItem.Text = "Informes"
+        '
+        'ventaxPeriodoToolStripMenuItem
+        '
+        Me.ventaxPeriodoToolStripMenuItem.Name = "ventaxPeriodoToolStripMenuItem"
+        Me.ventaxPeriodoToolStripMenuItem.Size = New System.Drawing.Size(185, 22)
+        Me.ventaxPeriodoToolStripMenuItem.Text = "Venta x Periodo"
+        '
+        'ventasxclientesToolStripMenuItem
+        '
+        Me.ventasxclientesToolStripMenuItem.Name = "ventasxclientesToolStripMenuItem"
+        Me.ventasxclientesToolStripMenuItem.Size = New System.Drawing.Size(185, 22)
+        Me.ventasxclientesToolStripMenuItem.Text = "Ventas x Clientes"
+        '
+        'btnBuscarCliente
+        '
+        Me.btnBuscarCliente.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnBuscarCliente.Image = Global.Negocio.My.Resources.Resources.find_search_document_6167
+        Me.btnBuscarCliente.Location = New System.Drawing.Point(252, 175)
+        Me.btnBuscarCliente.Name = "btnBuscarCliente"
+        Me.btnBuscarCliente.Size = New System.Drawing.Size(32, 32)
+        Me.btnBuscarCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.btnBuscarCliente.TabIndex = 71
+        Me.btnBuscarCliente.TabStop = False
+        '
         'FrmVenta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1386, 788)
+        Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.lblComprobante)
         Me.Controls.Add(Me.Panel1)
@@ -622,7 +658,6 @@ Partial Class FrmVenta
         CType(Me.btnMinimizar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnmaximizar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnCerrar, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnBuscarCliente, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
@@ -634,6 +669,9 @@ Partial Class FrmVenta
         Me.ToolStrip2.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
+        CType(Me.btnBuscarCliente, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -682,4 +720,8 @@ Partial Class FrmVenta
     Friend WithEvents txtTotalVenta As TextBox
     Friend WithEvents lblComprobante As Label
     Friend WithEvents Label6 As Label
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents ParametrosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ventaxPeriodoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ventasxclientesToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -176,6 +176,9 @@
     End Sub
 
     Public Sub InsertarDetallesVenta()
+
+        Dim fechaFormateada As String = dtFechaCarga.Value.ToString("yyyy-MM-dd")
+
         'TABLA DETALLE VENTA
         Try
 
@@ -190,8 +193,8 @@
                 ' Crear la consulta parametrizada
                 acciones.Connection = conexionSql
                 acciones.CommandType = CommandType.Text
-                acciones.CommandText = "INSERT INTO Detalle_Venta(Nro_Comprobante, ID_Producto, Descripcion, Cantidad, Precio_Unitario, Precio_Total)" &
-                          "VALUES (@Nro_Comprobante, @ID_Producto, @Descripcion, @Cantidad, @Precio_Unitario, @Precio_Total)"
+                acciones.CommandText = "INSERT INTO Detalle_Venta(Nro_Comprobante, ID_Producto, Descripcion, Cantidad, Precio_Unitario, Precio_Total, FechaCarga)" &
+                          "VALUES (@Nro_Comprobante, @ID_Producto, @Descripcion, @Cantidad, @Precio_Unitario, @Precio_Total, @FechaCarga)"
 
                 acciones.Parameters.Clear()
 
@@ -202,6 +205,7 @@
                 acciones.Parameters.AddWithValue("@Cantidad", cantidad)
                 acciones.Parameters.AddWithValue("@Precio_Unitario", precioUnitario)
                 acciones.Parameters.AddWithValue("@Precio_Total", total)
+                acciones.Parameters.AddWithValue("@FechaCarga", fechaFormateada)
 
 
                 ' Ejecutar el comando para guardar los datos
@@ -221,6 +225,7 @@
     Private Sub cmdGrabar_Click(sender As Object, e As EventArgs) Handles cmdGrabar.Click
 
         'TODO: Separa la lógica de guardar los datos en la base de datos en funciones independientes para cada tipo de venta (corriente y contado).
+        Dim fechaFormateada As String = dtFechaCarga.Value.ToString("yyyy-MM-dd")
 
         'SI es Venta Corriente... 
         If RadioButton1.Checked = True Then
@@ -252,7 +257,7 @@
                 ' Crear la consulta parametrizada
                 acciones.Connection = conexionSql
                 acciones.CommandType = CommandType.Text
-                acciones.CommandText = "INSERT INTO Cuenta_Corriente(ID_Cliente, Nombre, Apellido, Tipo_Venta, Tipo_Comprobante, Total_Venta, Nro_Comprobante)VALUES(@IDCliente, @Nombre, @Apellido, @TipoVenta, @TipoComprobante, @TotalVenta, @NroComprobante)"
+                acciones.CommandText = "INSERT INTO Cuenta_Corriente(ID_Cliente, Nombre, Apellido, Tipo_Venta, Tipo_Comprobante, Total_Venta, Nro_Comprobante,FechaCarga)VALUES(@IDCliente, @Nombre, @Apellido, @TipoVenta, @TipoComprobante, @TotalVenta, @NroComprobante, @FechaCarga)"
 
                 acciones.Parameters.Clear()
 
@@ -264,6 +269,7 @@
                 acciones.Parameters.AddWithValue("@TipoComprobante", tipoComprobante)
                 acciones.Parameters.AddWithValue("@TotalVenta", txtTotalVenta.Text)
                 acciones.Parameters.AddWithValue("@NroComprobante", lblComprobante.Text)
+                acciones.Parameters.AddWithValue("@FechaCarga", fechaFormateada)
 
                 ' Ejecutar el comando para guardar los datos
                 acciones.ExecuteNonQuery()
@@ -322,7 +328,7 @@
                 ' Crear la consulta parametrizada
                 acciones.Connection = conexionSql
                 acciones.CommandType = CommandType.Text
-                acciones.CommandText = "INSERT INTO Venta(ID_Cliente, Nombre, Apellido, Tipo_Venta, Tipo_Comprobante, Total_Venta, Nro_Comprobante)VALUES(@IDCliente, @Nombre, @Apellido, @TipoVenta, @TipoComprobante, @TotalVenta, @NroComprobante)"
+                acciones.CommandText = "INSERT INTO Venta(ID_Cliente, Nombre, Apellido, Tipo_Venta, Tipo_Comprobante, Total_Venta, Nro_Comprobante, FechaCarga)VALUES(@IDCliente, @Nombre, @Apellido, @TipoVenta, @TipoComprobante, @TotalVenta, @NroComprobante, @FechaCarga)"
 
                 acciones.Parameters.Clear()
 
@@ -334,6 +340,7 @@
                 acciones.Parameters.AddWithValue("@TipoComprobante", tipoComprobante)
                 acciones.Parameters.AddWithValue("@TotalVenta", txtTotalVenta.Text)
                 acciones.Parameters.AddWithValue("@NroComprobante", lblComprobante.Text)
+                acciones.Parameters.AddWithValue("@FechaCarga", fechaFormateada)
 
                 ' Ejecutar el comando para guardar los datos
                 acciones.ExecuteNonQuery()
@@ -363,5 +370,13 @@
 
     End Sub
 
+    Private Sub ventaxPeriodoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ventaxPeriodoToolStripMenuItem.Click
+        FrmVentaxPeriodo.Show()
 
+    End Sub
+
+    Private Sub ventasxclientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ventasxclientesToolStripMenuItem.Click
+        FrmVentaxCliente.Show()
+
+    End Sub
 End Class
