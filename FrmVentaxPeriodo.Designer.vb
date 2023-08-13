@@ -34,11 +34,13 @@ Partial Class FrmVentaxPeriodo
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton4 = New System.Windows.Forms.RadioButton()
+        Me.radioTodo = New System.Windows.Forms.RadioButton()
+        Me.radioVenta = New System.Windows.Forms.RadioButton()
+        Me.radioDevolucion = New System.Windows.Forms.RadioButton()
         Me.lblNombre = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
+        Me.InfVentaxPeriodo1 = New Negocio.InfVentaxPeriodo()
         Me.PanelCabecera.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.btnMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -55,7 +57,7 @@ Partial Class FrmVentaxPeriodo
         Me.PanelCabecera.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelCabecera.Location = New System.Drawing.Point(0, 0)
         Me.PanelCabecera.Name = "PanelCabecera"
-        Me.PanelCabecera.Size = New System.Drawing.Size(821, 40)
+        Me.PanelCabecera.Size = New System.Drawing.Size(1315, 40)
         Me.PanelCabecera.TabIndex = 5
         '
         'Label5
@@ -74,7 +76,7 @@ Partial Class FrmVentaxPeriodo
         Me.Panel3.Controls.Add(Me.btnMinimizar)
         Me.Panel3.Controls.Add(Me.btnCerrar)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel3.Location = New System.Drawing.Point(692, 0)
+        Me.Panel3.Location = New System.Drawing.Point(1186, 0)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(129, 40)
         Me.Panel3.TabIndex = 0
@@ -111,7 +113,7 @@ Partial Class FrmVentaxPeriodo
         Me.ToolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 40)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(821, 71)
+        Me.ToolStrip1.Size = New System.Drawing.Size(1315, 71)
         Me.ToolStrip1.TabIndex = 9
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -145,7 +147,7 @@ Partial Class FrmVentaxPeriodo
         'DateTimePicker1
         '
         Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker1.Location = New System.Drawing.Point(252, 230)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(208, 81)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(120, 20)
         Me.DateTimePicker1.TabIndex = 10
@@ -153,68 +155,69 @@ Partial Class FrmVentaxPeriodo
         'DateTimePicker2
         '
         Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker2.Location = New System.Drawing.Point(473, 230)
+        Me.DateTimePicker2.Location = New System.Drawing.Point(429, 81)
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(120, 20)
         Me.DateTimePicker2.TabIndex = 11
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.RadioButton1)
-        Me.GroupBox2.Controls.Add(Me.RadioButton2)
-        Me.GroupBox2.Controls.Add(Me.RadioButton4)
+        Me.GroupBox2.Controls.Add(Me.radioTodo)
+        Me.GroupBox2.Controls.Add(Me.radioVenta)
+        Me.GroupBox2.Controls.Add(Me.radioDevolucion)
         Me.GroupBox2.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.Color.Black
-        Me.GroupBox2.Location = New System.Drawing.Point(212, 117)
+        Me.GroupBox2.Location = New System.Drawing.Point(726, 54)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(427, 56)
         Me.GroupBox2.TabIndex = 107
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Tipo Comprobante"
         '
-        'RadioButton1
+        'radioTodo
         '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Checked = True
-        Me.RadioButton1.Font = New System.Drawing.Font("Century Gothic", 11.25!)
-        Me.RadioButton1.ForeColor = System.Drawing.Color.Black
-        Me.RadioButton1.Location = New System.Drawing.Point(310, 22)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(69, 24)
-        Me.RadioButton1.TabIndex = 105
-        Me.RadioButton1.Text = "TODO"
-        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.radioTodo.AutoSize = True
+        Me.radioTodo.Font = New System.Drawing.Font("Century Gothic", 11.25!)
+        Me.radioTodo.ForeColor = System.Drawing.Color.Black
+        Me.radioTodo.Location = New System.Drawing.Point(310, 22)
+        Me.radioTodo.Name = "radioTodo"
+        Me.radioTodo.Size = New System.Drawing.Size(69, 24)
+        Me.radioTodo.TabIndex = 105
+        Me.radioTodo.Text = "TODO"
+        Me.radioTodo.UseVisualStyleBackColor = True
         '
-        'RadioButton2
+        'radioVenta
         '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Font = New System.Drawing.Font("Century Gothic", 11.25!)
-        Me.RadioButton2.ForeColor = System.Drawing.Color.Black
-        Me.RadioButton2.Location = New System.Drawing.Point(199, 22)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(73, 24)
-        Me.RadioButton2.TabIndex = 104
-        Me.RadioButton2.Text = "VENTA"
-        Me.RadioButton2.UseVisualStyleBackColor = True
+        Me.radioVenta.AutoSize = True
+        Me.radioVenta.Checked = True
+        Me.radioVenta.Font = New System.Drawing.Font("Century Gothic", 11.25!)
+        Me.radioVenta.ForeColor = System.Drawing.Color.Black
+        Me.radioVenta.Location = New System.Drawing.Point(199, 22)
+        Me.radioVenta.Name = "radioVenta"
+        Me.radioVenta.Size = New System.Drawing.Size(73, 24)
+        Me.radioVenta.TabIndex = 104
+        Me.radioVenta.TabStop = True
+        Me.radioVenta.Text = "VENTA"
+        Me.radioVenta.UseVisualStyleBackColor = True
         '
-        'RadioButton4
+        'radioDevolucion
         '
-        Me.RadioButton4.AutoSize = True
-        Me.RadioButton4.Font = New System.Drawing.Font("Century Gothic", 11.25!)
-        Me.RadioButton4.ForeColor = System.Drawing.Color.Black
-        Me.RadioButton4.Location = New System.Drawing.Point(39, 22)
-        Me.RadioButton4.Name = "RadioButton4"
-        Me.RadioButton4.Size = New System.Drawing.Size(129, 24)
-        Me.RadioButton4.TabIndex = 102
-        Me.RadioButton4.Text = "DEVOLUCION"
-        Me.RadioButton4.UseVisualStyleBackColor = True
+        Me.radioDevolucion.AutoSize = True
+        Me.radioDevolucion.Font = New System.Drawing.Font("Century Gothic", 11.25!)
+        Me.radioDevolucion.ForeColor = System.Drawing.Color.Black
+        Me.radioDevolucion.Location = New System.Drawing.Point(39, 22)
+        Me.radioDevolucion.Name = "radioDevolucion"
+        Me.radioDevolucion.Size = New System.Drawing.Size(129, 24)
+        Me.radioDevolucion.TabIndex = 102
+        Me.radioDevolucion.Text = "DEVOLUCION"
+        Me.radioDevolucion.UseVisualStyleBackColor = True
         '
         'lblNombre
         '
         Me.lblNombre.AutoSize = True
         Me.lblNombre.Font = New System.Drawing.Font("Century Gothic", 11.25!)
         Me.lblNombre.ForeColor = System.Drawing.Color.Black
-        Me.lblNombre.Location = New System.Drawing.Point(248, 203)
+        Me.lblNombre.Location = New System.Drawing.Point(204, 54)
         Me.lblNombre.Name = "lblNombre"
         Me.lblNombre.Size = New System.Drawing.Size(56, 20)
         Me.lblNombre.TabIndex = 108
@@ -225,17 +228,31 @@ Partial Class FrmVentaxPeriodo
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 11.25!)
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(469, 203)
+        Me.Label1.Location = New System.Drawing.Point(425, 54)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(50, 20)
         Me.Label1.TabIndex = 109
         Me.Label1.Text = "Hasta"
         '
+        'CrystalReportViewer1
+        '
+        Me.CrystalReportViewer1.ActiveViewIndex = 0
+        Me.CrystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.CrystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default
+        Me.CrystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.CrystalReportViewer1.Location = New System.Drawing.Point(0, 153)
+        Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
+        Me.CrystalReportViewer1.ReportSource = Me.InfVentaxPeriodo1
+        Me.CrystalReportViewer1.Size = New System.Drawing.Size(1315, 635)
+        Me.CrystalReportViewer1.TabIndex = 110
+        Me.CrystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
+        '
         'FrmVentaxPeriodo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(821, 309)
+        Me.ClientSize = New System.Drawing.Size(1315, 788)
+        Me.Controls.Add(Me.CrystalReportViewer1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.lblNombre)
         Me.Controls.Add(Me.GroupBox2)
@@ -247,6 +264,7 @@ Partial Class FrmVentaxPeriodo
         Me.Name = "FrmVentaxPeriodo"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FrmVentaxPeriodo"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.PanelCabecera.ResumeLayout(False)
         Me.PanelCabecera.PerformLayout()
         Me.Panel3.ResumeLayout(False)
@@ -273,9 +291,11 @@ Partial Class FrmVentaxPeriodo
     Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents DateTimePicker2 As DateTimePicker
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents RadioButton2 As RadioButton
-    Friend WithEvents RadioButton4 As RadioButton
-    Friend WithEvents RadioButton1 As RadioButton
+    Friend WithEvents radioVenta As RadioButton
+    Friend WithEvents radioDevolucion As RadioButton
+    Friend WithEvents radioTodo As RadioButton
     Friend WithEvents lblNombre As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents CrystalReportViewer1 As CrystalDecisions.Windows.Forms.CrystalReportViewer
+    Friend WithEvents InfVentaxPeriodo1 As InfVentaxPeriodo
 End Class

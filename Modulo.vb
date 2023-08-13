@@ -17,7 +17,6 @@
     'datatable para los combo
     Public tabladedatos As New DataTable
 
-    'Para realizar las acciones de ejecucion 
-    Public acciones2 As New SqlClient.SqlCommand
+
 
 End Module

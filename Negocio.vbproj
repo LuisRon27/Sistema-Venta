@@ -17,7 +17,7 @@
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <DefineDebug>true</DefineDebug>
@@ -52,10 +52,13 @@
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -168,12 +171,6 @@
     <Compile Include="FrmProveedor.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmReporte.Designer.vb">
-      <DependentUpon>FrmReporte.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FrmReporte.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="FrmRubro.Designer.vb">
       <DependentUpon>FrmRubro.vb</DependentUpon>
     </Compile>
@@ -192,10 +189,10 @@
     <Compile Include="FrmVentaxCliente.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmVentaxProducto.Designer.vb">
-      <DependentUpon>FrmVentaxProducto.vb</DependentUpon>
+    <Compile Include="FrmVentaxPeriodo.Designer.vb">
+      <DependentUpon>FrmVentaxPeriodo.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmVentaxProducto.vb">
+    <Compile Include="FrmVentaxPeriodo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="InfVentaxPeriodo.vb">
@@ -277,8 +274,8 @@
     <EmbeddedResource Include="FrmVentaxCliente.resx">
       <DependentUpon>FrmVentaxCliente.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmVentaxProducto.resx">
-      <DependentUpon>FrmVentaxProducto.vb</DependentUpon>
+    <EmbeddedResource Include="FrmVentaxPeriodo.resx">
+      <DependentUpon>FrmVentaxPeriodo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InfVentaxPeriodo.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
