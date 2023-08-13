@@ -37,6 +37,8 @@ Partial Class FrmVentaxCliente
         Me.lblNombre = New System.Windows.Forms.Label()
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
+        Me.InfVentaxPeriodo1 = New Negocio.InfVentaxPeriodo()
         Me.PanelCabecera.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.btnMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -52,7 +54,7 @@ Partial Class FrmVentaxCliente
         Me.PanelCabecera.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelCabecera.Location = New System.Drawing.Point(0, 0)
         Me.PanelCabecera.Name = "PanelCabecera"
-        Me.PanelCabecera.Size = New System.Drawing.Size(775, 40)
+        Me.PanelCabecera.Size = New System.Drawing.Size(1330, 40)
         Me.PanelCabecera.TabIndex = 6
         '
         'Label5
@@ -71,7 +73,7 @@ Partial Class FrmVentaxCliente
         Me.Panel3.Controls.Add(Me.btnMinimizar)
         Me.Panel3.Controls.Add(Me.btnCerrar)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel3.Location = New System.Drawing.Point(646, 0)
+        Me.Panel3.Location = New System.Drawing.Point(1201, 0)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(129, 40)
         Me.Panel3.TabIndex = 0
@@ -103,13 +105,12 @@ Partial Class FrmVentaxCliente
         'ToolStrip1
         '
         Me.ToolStrip1.BackColor = System.Drawing.Color.Transparent
-        Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.None
         Me.ToolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CmdImprimir, Me.cmdsalir, Me.ToolStripSeparator1})
         Me.ToolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow
-        Me.ToolStrip1.Location = New System.Drawing.Point(631, 229)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 40)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(143, 71)
+        Me.ToolStrip1.Size = New System.Drawing.Size(1330, 71)
         Me.ToolStrip1.TabIndex = 10
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -145,7 +146,7 @@ Partial Class FrmVentaxCliente
         Me.lblID.AutoSize = True
         Me.lblID.Font = New System.Drawing.Font("Century Gothic", 11.25!)
         Me.lblID.ForeColor = System.Drawing.Color.Black
-        Me.lblID.Location = New System.Drawing.Point(327, 78)
+        Me.lblID.Location = New System.Drawing.Point(849, 123)
         Me.lblID.Name = "lblID"
         Me.lblID.Size = New System.Drawing.Size(92, 20)
         Me.lblID.TabIndex = 62
@@ -155,9 +156,8 @@ Partial Class FrmVentaxCliente
         '
         Me.txtidCliente.BackColor = System.Drawing.Color.Azure
         Me.txtidCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtidCliente.Enabled = False
         Me.txtidCliente.Font = New System.Drawing.Font("Century Gothic", 11.25!)
-        Me.txtidCliente.Location = New System.Drawing.Point(314, 101)
+        Me.txtidCliente.Location = New System.Drawing.Point(836, 146)
         Me.txtidCliente.Name = "txtidCliente"
         Me.txtidCliente.Size = New System.Drawing.Size(123, 26)
         Me.txtidCliente.TabIndex = 61
@@ -167,7 +167,7 @@ Partial Class FrmVentaxCliente
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 11.25!)
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(473, 159)
+        Me.Label1.Location = New System.Drawing.Point(605, 123)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(50, 20)
         Me.Label1.TabIndex = 113
@@ -178,7 +178,7 @@ Partial Class FrmVentaxCliente
         Me.lblNombre.AutoSize = True
         Me.lblNombre.Font = New System.Drawing.Font("Century Gothic", 11.25!)
         Me.lblNombre.ForeColor = System.Drawing.Color.Black
-        Me.lblNombre.Location = New System.Drawing.Point(216, 159)
+        Me.lblNombre.Location = New System.Drawing.Point(348, 123)
         Me.lblNombre.Name = "lblNombre"
         Me.lblNombre.Size = New System.Drawing.Size(56, 20)
         Me.lblNombre.TabIndex = 112
@@ -187,7 +187,7 @@ Partial Class FrmVentaxCliente
         'DateTimePicker2
         '
         Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker2.Location = New System.Drawing.Point(445, 186)
+        Me.DateTimePicker2.Location = New System.Drawing.Point(577, 150)
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(120, 20)
         Me.DateTimePicker2.TabIndex = 111
@@ -195,16 +195,30 @@ Partial Class FrmVentaxCliente
         'DateTimePicker1
         '
         Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker1.Location = New System.Drawing.Point(189, 186)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(321, 150)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(120, 20)
         Me.DateTimePicker1.TabIndex = 110
+        '
+        'CrystalReportViewer1
+        '
+        Me.CrystalReportViewer1.ActiveViewIndex = 0
+        Me.CrystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.CrystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default
+        Me.CrystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.CrystalReportViewer1.Location = New System.Drawing.Point(0, 203)
+        Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
+        Me.CrystalReportViewer1.ReportSource = Me.InfVentaxPeriodo1
+        Me.CrystalReportViewer1.Size = New System.Drawing.Size(1330, 585)
+        Me.CrystalReportViewer1.TabIndex = 114
+        Me.CrystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
         '
         'FrmVentaxCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(775, 303)
+        Me.ClientSize = New System.Drawing.Size(1330, 788)
+        Me.Controls.Add(Me.CrystalReportViewer1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.lblNombre)
         Me.Controls.Add(Me.DateTimePicker2)
@@ -217,6 +231,7 @@ Partial Class FrmVentaxCliente
         Me.Name = "FrmVentaxCliente"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FrmVentaxCliente"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.PanelCabecera.ResumeLayout(False)
         Me.PanelCabecera.PerformLayout()
         Me.Panel3.ResumeLayout(False)
@@ -244,4 +259,6 @@ Partial Class FrmVentaxCliente
     Friend WithEvents lblNombre As Label
     Friend WithEvents DateTimePicker2 As DateTimePicker
     Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents CrystalReportViewer1 As CrystalDecisions.Windows.Forms.CrystalReportViewer
+    Friend WithEvents InfVentaxPeriodo1 As InfVentaxPeriodo
 End Class

@@ -60,9 +60,15 @@
             acciones.Parameters.AddWithValue("@TipoComprobante", tipoComprobante)
 
             ' Ejecutar el procedimiento almacenado
-            acciones.ExecuteNonQuery()
+            Dim filasInsertadas As Integer = acciones.ExecuteNonQuery()
 
-            MsgBox("Datos insertados correctamente en Temporalimpresion", vbOKOnly + vbInformation, "Mensaje del Sistema")
+            If filasInsertadas = 0 Then
+                MsgBox("No se encontraron Ventas o Devoluciones en el rango de fechas especificado.", vbOKOnly + vbInformation, "Mensaje del Sistema")
+            Else
+                MsgBox("Datos insertados correctamente en Temporalimpresion", vbOKOnly + vbInformation, "Mensaje del Sistema")
+            End If
+
+
 
         Catch ex As Exception
             MsgBox(ex.ToString())
