@@ -58,10 +58,10 @@ Partial Class frmPrincipal
         Me.EstadoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CiudadesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CondicionesIVAToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MuestraProductoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.tmOcultarMenu = New System.Windows.Forms.Timer(Me.components)
         Me.tmMostrarMenu = New System.Windows.Forms.Timer(Me.components)
         Me.horafecha = New System.Windows.Forms.Timer(Me.components)
-        Me.MuestraProductoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PanelCabecera.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.btn_maximizar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -425,7 +425,7 @@ Partial Class frmPrincipal
         Me.lblfecha.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblfecha.Location = New System.Drawing.Point(282, 318)
         Me.lblfecha.Name = "lblfecha"
-        Me.lblfecha.Size = New System.Drawing.Size(101, 32)
+        Me.lblfecha.Size = New System.Drawing.Size(100, 32)
         Me.lblfecha.TabIndex = 4
         Me.lblfecha.Text = "Label1"
         Me.lblfecha.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -457,32 +457,38 @@ Partial Class frmPrincipal
         Me.ParametrosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RubroToolStripMenuItem, Me.EstadoToolStripMenuItem, Me.CiudadesToolStripMenuItem, Me.CondicionesIVAToolStripMenuItem, Me.MuestraProductoToolStripMenuItem})
         Me.ParametrosToolStripMenuItem.Image = Global.Negocio.My.Resources.Resources._1904675_configuration_edit_gear_options_preferences_setting_settings_122525
         Me.ParametrosToolStripMenuItem.Name = "ParametrosToolStripMenuItem"
-        Me.ParametrosToolStripMenuItem.Size = New System.Drawing.Size(109, 20)
+        Me.ParametrosToolStripMenuItem.Size = New System.Drawing.Size(108, 20)
         Me.ParametrosToolStripMenuItem.Text = "Parametros"
         '
         'RubroToolStripMenuItem
         '
         Me.RubroToolStripMenuItem.Name = "RubroToolStripMenuItem"
-        Me.RubroToolStripMenuItem.Size = New System.Drawing.Size(189, 22)
+        Me.RubroToolStripMenuItem.Size = New System.Drawing.Size(187, 22)
         Me.RubroToolStripMenuItem.Text = "Rubro"
         '
         'EstadoToolStripMenuItem
         '
         Me.EstadoToolStripMenuItem.Name = "EstadoToolStripMenuItem"
-        Me.EstadoToolStripMenuItem.Size = New System.Drawing.Size(189, 22)
+        Me.EstadoToolStripMenuItem.Size = New System.Drawing.Size(187, 22)
         Me.EstadoToolStripMenuItem.Text = "Estado"
         '
         'CiudadesToolStripMenuItem
         '
         Me.CiudadesToolStripMenuItem.Name = "CiudadesToolStripMenuItem"
-        Me.CiudadesToolStripMenuItem.Size = New System.Drawing.Size(189, 22)
+        Me.CiudadesToolStripMenuItem.Size = New System.Drawing.Size(187, 22)
         Me.CiudadesToolStripMenuItem.Text = "Ciudades"
         '
         'CondicionesIVAToolStripMenuItem
         '
         Me.CondicionesIVAToolStripMenuItem.Name = "CondicionesIVAToolStripMenuItem"
-        Me.CondicionesIVAToolStripMenuItem.Size = New System.Drawing.Size(189, 22)
+        Me.CondicionesIVAToolStripMenuItem.Size = New System.Drawing.Size(187, 22)
         Me.CondicionesIVAToolStripMenuItem.Text = "Condiciones IVA"
+        '
+        'MuestraProductoToolStripMenuItem
+        '
+        Me.MuestraProductoToolStripMenuItem.Name = "MuestraProductoToolStripMenuItem"
+        Me.MuestraProductoToolStripMenuItem.Size = New System.Drawing.Size(187, 22)
+        Me.MuestraProductoToolStripMenuItem.Text = "Muestra Producto"
         '
         'tmOcultarMenu
         '
@@ -493,12 +499,6 @@ Partial Class frmPrincipal
         'horafecha
         '
         Me.horafecha.Enabled = True
-        '
-        'MuestraProductoToolStripMenuItem
-        '
-        Me.MuestraProductoToolStripMenuItem.Name = "MuestraProductoToolStripMenuItem"
-        Me.MuestraProductoToolStripMenuItem.Size = New System.Drawing.Size(189, 22)
-        Me.MuestraProductoToolStripMenuItem.Text = "Muestra Producto"
         '
         'frmPrincipal
         '

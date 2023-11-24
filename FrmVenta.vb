@@ -379,4 +379,8 @@
         FrmVentaxCliente.Show()
 
     End Sub
+
+    Private Sub txtTotalVenta_TextChanged(sender As Object, e As EventArgs) Handles txtTotalVenta.TextChanged
+
+    End Sub
 End Class
